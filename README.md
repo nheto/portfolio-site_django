@@ -38,25 +38,31 @@ A dynamic, Bootstrap-styled portfolio built with Django to showcase web projects
    python manage.py migrate
    python manage.py runserver
 
-📁 Project Structure
+## 📁 Project Structure
 portfolio_site/
-├── static/
-├── media/
-├── templates/
-├── portfolio/
+│
+├── static/         # CSS, JS, images
+├── media/          # Uploaded files
+├── templates/      # HTML templates
+│
+├── portfolio/      # Project showcase app
 │   ├── models.py
 │   ├── views.py
 │   └── admin.py
-├── about/
+│
+├── about/          # Personal bio app
+│
 ├── manage.py
 └── requirements.txt
 
-🧪 Testing & Deployment
+## 🧪 Testing & Deployment
+
 - Media and static files configured for local and production use
 - Admin panel tested for dynamic content updates
 - Deployment-ready with secure settings and modular structure
 
-🙋 About the Author
+## 🙋 About the Author
+
 Ernesto is a Web Content Migration Specialist transitioning into IT/web leadership roles. Passionate about clean design, scalable workflows, and collaborative development
 
 
