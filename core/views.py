@@ -1,19 +1,20 @@
 from django.shortcuts import render
 from .forms import ContactForm
-from django.contrib import messages
-from .models import Project
 from django.core.mail import send_mail
 from django.conf import settings
+from django.contrib import messages
+from .models import Project
+
 
 def home_view(request):
     return render(request, 'core/home.html')
 
 def portfolio_view(request):
-    return render(request, 'core/portfolio.html')
-
-def portfolio_view(request):
     projects = Project.objects.all()
     return render(request, 'core/portfolio.html', {'projects': projects})
+
+def about_view(request):
+    return render(request, 'core/about.html')
 
 def contact_view(request):
     form = ContactForm()

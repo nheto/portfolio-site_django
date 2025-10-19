@@ -1,0 +1,52 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-2">
+        {% if profile.profile_pic %}
+          <img  src="{{ profile.profile_pic.url }}" class="img-fluid rounded shadow" alt="{{ profile.name }}">
+        {% else %}
+          <img src="/media/profile/default.jpg" class="img-fluid rounded shadow" alt="Default Profile">
+        {% endif %}
+    </div>
+    <div class="col-md-10">
+        <h1 class="display-4">Hi, I'm {{ profile.name }}</h1>
+        <p class="lead">{{ profile.bio }}</p>
+        {% if profile.resume %}
+          <a href="{{ profile.resume.url }}" class="btn btn-primary mt-3" download>Download Resume</a>
+        {% else %}
+          <a href="#" class="btn btn-secondary mt-3 disabled">Resume not available</a>
+        {% endif %}
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5 text-center">
+  <a href="https://www.linkedin.com/in/ernesto-masion-jr" target="_blank" class="btn btn-outline-secondary me-2">LinkedIn</a>
+  <a href="{% url 'contact' %}" class="btn btn-outline-secondary">Email Me</a>
+</div>
+
+<hr class="my-5">
+
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Skills & Tools</h2>
+  <div class="row text-center">
+    {% for skill in skills %}
+    <div class="col-md-4 mb-3">
+      <div class="border p-3 rounded shadow-sm">{{ skill }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+<hr class="my-5">
+
+<div class="container mt-5 text-center">
+  <blockquote class="blockquote">
+    <p class="mb-3">“I thrive on iterative problem-solving and collaborative progress.”</p>
+    <footer class="blockquote-footer">Ernesto Masion Jr.</footer>
+  </blockquote>
+</div>
+
+{% endblock %}
