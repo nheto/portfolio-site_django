@@ -39,6 +39,7 @@ A dynamic, Bootstrap-styled portfolio built with Django to showcase web projects
    python manage.py runserver
 
 ## 📁 Project Structure
+```text
 portfolio_site/
 │
 ├── static/         # CSS, JS, images
